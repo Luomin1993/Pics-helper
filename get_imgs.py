@@ -26,7 +26,7 @@ pic_name = 'whats'
 #http://pic.qdanc.com/2015/6119/yaoqi6.jpg
 def get_img(url,folder):
 	content = spider.url_get(url)
-	re_con  = re.compile(r'(.*).jpg')
+	re_con  = re.compile(r'http.*?jpg')
 	img_url = re_con.findall(content)
 	os.system('wget '+img_url+' -P '+folder)
 
